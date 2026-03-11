@@ -97,8 +97,9 @@ if __name__ == "__main__":
             listar_registros()
         elif escolha == 3:
             id = int(input('Digite o ID que deseja alterar: '))
-            status = input('Digite o novo Status para o backlog: ')
+            status = str(input('Digite o novo Status para o backlog: '))
             atualizar_status(id, status)
+
         elif escolha == 4:  
             deletar_registro()
         else:
