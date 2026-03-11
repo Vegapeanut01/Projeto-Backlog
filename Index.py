@@ -59,10 +59,10 @@ def atualizar_status(id,status):
     conexao.commit()
     conexao.close()
 
-def atualizar_data(id,datafinalizacao):
+def atualizar_data(id,dataFinalizado):
     conexao = sqlite3.connect('Backlog.db')
     cursor = conexao.cursor()
-    cursor.execute('''UPDATE backlog SET DATA_FINALIZADO = ? WHERE id = ?'''(datafinalizacao, id))
+    cursor.execute('''UPDATE backlog SET DATA_FINALIZADO = ? WHERE id = ?''', (dataFinalizado, id))
     conexao.commit()
     conexao.close()
 
@@ -104,7 +104,7 @@ if __name__ == "__main__":
             listar_registros()
         elif escolha == 3:
             id = int(input('Digite o ID que deseja alterar: '))
-            status = str(input('Digite o novo Status para o backlog: '))
+            status = input('Digite o novo Status para o backlog: ')
             atualizar_status(id, status)
             if status == 'Finalizado': 
                 dataFinalizado = input('Digite a data de finalização do jogo no formado dd/mm/yyyy: ') 
