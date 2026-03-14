@@ -40,7 +40,7 @@ def adicionar_registro(game, platform, status, dataFinalizado):
     conexao.close()
 
 
-#Listar todos os usuários
+#Listar todos os jogos
 def listar_registros():
     conexao = sqlite3.connect('Backlog.db')
     cursor = conexao.cursor()
