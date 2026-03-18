@@ -51,7 +51,7 @@ def listar_registros():
     conexao.close()
 
 #Atualizar os dados 
-#Separa quais parte vou querer atualizar posso querer mudar só umas partes
+#Partes que se pode atualizar separado: Status; Data; Plataforma
 def atualizar_status(id,status): 
     conexao = sqlite3.connect('Backlog.db')
     cursor = conexao.cursor()
@@ -66,6 +66,11 @@ def atualizar_data(id,dataFinalizado):
     conexao.commit()
     conexao.close()
 
+def atualizar_plataforma(id, plataforma):
+    conexao = sqlite3.connect('Backlog.db')
+    cursor = conexao.cursor()
+    cursor.execute('''UPDATE backlog SET PLATFORM = ? WHERE id = ?''', (plataforma, id)
+
 
 #Apagando um registro 
 def deletar_registro(id): 
@@ -77,6 +82,10 @@ def deletar_registro(id):
 
 #Menu de escolhas
 def menu(): 
+    print("=========================")
+    print("---------Backlog---------")
+    print("=========================")
+
     print("\n1. Adicionar registro")
     print("2. Listar registro")
     print("3. Atualizar registro")
