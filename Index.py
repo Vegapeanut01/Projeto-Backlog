@@ -1,7 +1,7 @@
 import sqlite3
 import datetime
 
-
+#Configurar opções para poder alterar os registros 
 #Coisas para fazer
 #Criar função para ler os dados
 #Criar função para adionar dados
@@ -69,7 +69,7 @@ def atualizar_data(id,dataFinalizado):
 def atualizar_plataforma(id, plataforma):
     conexao = sqlite3.connect('Backlog.db')
     cursor = conexao.cursor()
-    cursor.execute('''UPDATE backlog SET PLATFORM = ? WHERE id = ?''', (plataforma, id)
+    cursor.execute('''UPDATE backlog SET PLATFORM = ? WHERE id = ?''', (plataforma, id))
 
 
 #Apagando um registro 
